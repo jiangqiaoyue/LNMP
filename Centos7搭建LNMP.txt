@@ -1,16 +1,25 @@
 一.安装nginx
 1.下载对应当前系统版本的nginx包(package)
+	
 	wget http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+
 2.建立nginx的yum仓库（默认yum是没有nginx的）
+
 	rpm -ivh nginx-release-centos-7-0.el7.ngx.noarch.rpm
+
 3.下载并安装nginx
-    yum install nginx
+    
+        yum install nginx
+
 4.nginx启动（nginx安装目录下－/usr/sbin/）
+	
 	systemctl start nginx.service
+
 5.设置nginx开机启动
+
 	systemctl enable nginx.service
 
-二.防火墙设置(防火墙这一块 你可以先不管,跳过)
+二.防火墙设置(防火墙这一块 如果你不会又害怕出错 你可以先不管,跳过)
 查看永久服务  
    	firewall-cmd --permanent --list-services 
 添加永久服务	
@@ -30,23 +39,25 @@
 
 三.安装php
 1.查看当前安装的php版本（ yum list installed | grep php）
-​  如果存在php安装包先删除之前版本  用yum remove 移除 php相关的包
+   ​如果存在php安装包先删除之前版本  用yum remove 移除 php相关的包
 2.rpm 安装 Php7 相应的 yum源
- ​ rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
-​  rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+   ​ rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+   ​ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 3.安装php7.0
-  yum install php70w
+   yum install php70w
 4.安装php扩展
-​ php70w-mysql.x86_64        mysql扩展（作为依赖同时安装 php70w-pdo.x8664）
+​ php70w-mysql.x86_64       mysql扩展（作为依赖同时安装 php70w-pdo.x8664）
 ​ php70w-gd.x86_64          GD库，是php处理图形的扩展库
 ​ php70w-ldap.x86_64        "轻量级目录访问协议"，是一个用于访问"目录服务器"(Directory Servers)的协议;
- php70w-mbstring.x86_64    mbstring扩展库用于处理多字节字符串
- php70w-mcrypt.x86_64 	   Mcrypt扩展库可以实现加密解密功能，就是既能将明文加密，也可以密文还原。
+  php70w-mbstring.x86_64     mbstring扩展库用于处理多字节字符串
+  php70w-mcrypt.x86_64 	    Mcrypt扩展库可以实现加密解密功能，就是既能将明文加密，也可以密文还原。
+  安装XML writer
  
- *(注意事项：php 7.1以上版本不在再支持mcrypt,安装php7.1以上版本请注意兼容)
+ 
+(注意事项：php 7.1以上版本不在再支持mcrypt,安装php7.1以上版本请注意兼容)
 
 5.安装PHP FPM
- yum install php70w-fpm
+   yum install php70w-fpm
 
 第四步：配置nginx
 *(修改配置文件之前记得备份,但要注意不要用.conf作为后缀名)
@@ -107,7 +118,7 @@
 
 5.设置MySQL远程登录权限
     
-   	为root账户添加远程登陆权限,建议单独创建一个远程账号,只给使用权限,避免安全问题和误操作
+    为root账户添加远程登陆权限,建议单独创建一个远程账号,只给使用权限,避免安全问题和误操作
     mysql>grant all privileges on *.* to 'root'@'%' IDENTIFIED BY '你的root账户密码';
    
     刷新权限
