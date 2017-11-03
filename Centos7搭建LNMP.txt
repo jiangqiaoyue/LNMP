@@ -49,9 +49,9 @@
 ​ php70w-mysql.x86_64       mysql扩展（作为依赖同时安装 php70w-pdo.x8664）
 ​ php70w-gd.x86_64          GD库，是php处理图形的扩展库
 ​ php70w-ldap.x86_64        "轻量级目录访问协议"，是一个用于访问"目录服务器"(Directory Servers)的协议;
-  php70w-mbstring.x86_64     mbstring扩展库用于处理多字节字符串
+  php70w-mbstring.x86_64    mbstring扩展库用于处理多字节字符串
   php70w-mcrypt.x86_64 	    Mcrypt扩展库可以实现加密解密功能，就是既能将明文加密，也可以密文还原。
-  安装XML writer
+  php70w-xml.x86_64         php_xml扩展，可以用来生成xml文档（yum install php-xml）
  
  
 (注意事项：php 7.1以上版本不在再支持mcrypt,安装php7.1以上版本请注意兼容)
