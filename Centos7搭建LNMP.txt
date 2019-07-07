@@ -99,27 +99,19 @@
 五,安装mysql
 	
 1.先下载mysql的repo源；相关命令：
-	 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+	wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 2.安装mysql-community-release-el7-5.noarch.rpm包
 	（安装这个包后，会获得两个mysql的yum repo源：/etc/yum.repos.d/mysql-community.repo，/etc/yum.repos.d/mysql-community-source.repo）
-	 rpm -ivh mysql-community-release-el7-5.noarch.rpm
+	rpm -ivh mysql-community-release-el7-5.noarch.rpm
 3.安装MYSQL
-	 sudo yum install mysql-server
+	yum install mysql-server
 4.重置密码
-​	更改用户权限：
-	sudo chown -R root:root /var/lib/mysql
-​ 	重启服务：
-	systemctl restart mysql.service
+ 	重启服务：
+	systemctl restart mysql
 	登录，并修改密码：
 	mysql -u root
-​ 	mysql > use mysql;
-​ 	mysql > update user set password=password('新密码') where user='root';
-​ 	mysql > exit;
-
-5.设置MySQL远程登录权限
-    
-    为root账户添加远程登陆权限,建议单独创建一个远程账号,只给使用权限,避免安全问题和误操作
-    mysql>grant all privileges on *.* to 'root'@'%' IDENTIFIED BY '你的root账户密码';
-   
-    刷新权限
-    mysql> flush privileges;
+ 	mysql> set password for 'root'@'localhost' =password('你的密码');
+	mysql> flush privileges;
+	为root账户添加远程登陆权限
+	mysql> grant all privileges on *.* to root@'%' identified by '远程密码';
+	mysql> flush privileges;
