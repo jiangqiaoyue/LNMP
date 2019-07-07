@@ -39,10 +39,10 @@
 
 三.安装php
 1.查看当前安装的php版本（ yum list installed | grep php）
-   ​如果存在php安装包先删除之前版本  用yum remove 移除 php相关的包
+   如果存在php安装包先删除之前版本  用yum remove 移除 php相关的包
 2.rpm 安装 Php7 相应的 yum源
-   ​ rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
-   ​ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+   rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+   rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 3.安装php7.0
    yum install php70w
 4.安装php扩展
@@ -115,3 +115,5 @@
 	为root账户添加远程登陆权限
 	mysql> grant all privileges on *.* to root@'%' identified by '远程密码';
 	mysql> flush privileges;
+
+
