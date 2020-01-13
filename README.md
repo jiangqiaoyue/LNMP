@@ -1,18 +1,18 @@
-# LNMP
+#LNMP
 centos7 搭建lnmp 环境
 
 一.安装nginx
 1.下载对应当前系统版本的nginx包(package)
-	
-	```wget http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm```
+
+```wget http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm```
 
 2.建立nginx的yum仓库（默认yum是没有nginx的）
 
-	rpm -ivh nginx-release-centos-7-0.el7.ngx.noarch.rpm
+```rpm -ivh nginx-release-centos-7-0.el7.ngx.noarch.rpm
 
 3.下载并安装nginx
     
-        yum install nginx
+```yum install nginx
 
 4.nginx启动（nginx安装目录下－/usr/sbin/）
 	
