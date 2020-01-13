@@ -8,15 +8,15 @@ centos7 搭建lnmp 环境
 
 2.建立nginx的yum仓库（默认yum是没有nginx的）
 
-```rpm -ivh nginx-release-centos-7-0.el7.ngx.noarch.rpm
+```rpm -ivh nginx-release-centos-7-0.el7.ngx.noarch.rpm```
 
 3.下载并安装nginx
     
-```yum install nginx
+```yum install nginx```
 
 4.nginx启动（nginx安装目录下－/usr/sbin/）
 	
-	systemctl start nginx.service
+```systemctl start nginx.service```
 
 5.设置nginx开机启动
 
